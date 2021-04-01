@@ -8,12 +8,12 @@ import DisplayResult from "../components/CounterDIsplay/CounterDisplay";
 
 // import counter from "../components/Conteer/CounerOutput";
 // import { connect } from "react-redux";
-const App = () => {
+const App = (props) => {
   const [counterState, setCounterState] = useState({ counter: 0, result: [] });
   console.log(counterState.result[counterState.result.length]);
 
-  const incHandler = () =>
-    setCounterState({ ...counterState, counter: counterState.counter + 1 });
+  // const incHandler = () =>
+  //   setCounterState({ ...counterState, counter: counterState.counter + 1 });
   // const str = { ...counterState };
   // console.log({ ...str, counter: str.counter++ });
 
@@ -32,13 +32,8 @@ const App = () => {
 
   return (
     <div className="App">
-      <Cout value={counterState.counter} />
-      <Cbutton
-        value={"Increment"}
-        click={() => {
-          incHandler();
-        }}
-      />
+      <Cout value={props.ctr} />
+      <Cbutton value={"Increment"} click={props.onIncrementCounter} />
       <Cbutton value={"Save"} click={onSaveHandler} />
       <DisplayResult value={counterState.result}></DisplayResult>
     </div>
