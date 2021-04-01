@@ -1,0 +1,18 @@
+.card{
+    width: 10em;
+    height:2em;
+    background-color: #b8b5ff;
+    color: white;
+    display: block;
+    text-align: auto;
+    font-size: large;
+    font-weight: bold;
+    margin: auto;
+    box-shadow: -10px 10px 5px #b8b5ff;
+
+}
+.card:hover{
+    background-color:white ;
+    color:#b8b5ff ;
+    box-shadow: 0 0 0 white;
+}
