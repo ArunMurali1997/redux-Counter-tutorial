@@ -3,8 +3,8 @@ const rootReducer = (state = { counter: 0 }, action) => {
   switch (action.type) {
     case "INC":
       return { ...state, counter: state.counter + 1 };
-    case "ADD_2":
-      return { ...state, counter: state.counter + action.value };
+    case "DEC2":
+      return { ...state, counter: state.counter - action.value };
   }
   return state;
 };

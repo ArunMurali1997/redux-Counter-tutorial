@@ -34,16 +34,20 @@ const App = (props) => {
     <div className="App">
       <Cout value={props.ctr} />
       <Cbutton value={"Increment"} click={props.onIncrementCounter} />
+      <Cbutton value={"Decrement by 2"} click={props.onDecrementBy2} val />
       <Cbutton value={"Save"} click={onSaveHandler} />
       <DisplayResult value={counterState.result}></DisplayResult>
     </div>
   );
 };
 const mapStaeToProps = (state) => {
-  return { ctr: state.counter };
+  return { ctr: state.counter, result: [] };
 };
 const mapDispatchToProps = (dispatch) => {
-  return { onIncrementCounter: () => dispatch({ type: "INC" }) };
+  return {
+    onIncrementCounter: () => dispatch({ type: "INC" }),
+    onDecrementBy2: () => dispatch({ type: "DEC2", value: 2 }),
+  };
 };
 
 export default connect(mapStaeToProps, mapDispatchToProps)(App);
