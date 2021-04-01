@@ -51,4 +51,4 @@ const mapDispatchToProps = (dispatch) => {
   return { onIncrementCounter: () => dispatch({ type: "INC" }) };
 };
 
-export default connect(mapStaeToProps)(App);
+export default connect(mapStaeToProps, mapDispatchToProps)(App);
